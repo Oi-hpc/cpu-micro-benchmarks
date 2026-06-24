@@ -1,6 +1,8 @@
 #ifndef __UARCH_H__
 #define __UARCH_H__
 
+#include "include/host.h"
+
 enum uarch {
   // special
   unknown,

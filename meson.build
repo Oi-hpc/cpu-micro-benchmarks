@@ -20,9 +20,12 @@ else
 	foreach line : r.stderr().strip().split('\n')
 		message(line)
 	endforeach
-	foreach line : r.stdout().strip().split('\n')
-		cpp_args += [line]
-	endforeach
+	detect_uarch_flags = r.stdout().strip()
+	if detect_uarch_flags != ''
+		foreach line : detect_uarch_flags.split('\n')
+			cpp_args += [line]
+		endforeach
+	endif
 	message('Got CXXFLAGS:', cpp_args)
 endif
 
