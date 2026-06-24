@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     fprintf(fp, "\tstp q14, q15, [sp, #0x60]\n");
 
     if (pattern == 4 || pattern == 5) {
-      fprintf(fp, "\t.arch armv9-a+sve\n");
+      fprintf(fp, "\t.arch %s\n", SVE_ARCH);
       fprintf(fp, "\tptrue p0.b\n");
     }
 

@@ -66,12 +66,12 @@ int main(int argc, char *argv[]) {
     // read sve length in runtime
     if (pattern == 4) {
       uint64_t len = 0;
-      asm __volatile__(".arch armv9-a+sve\ncntw %0" : "=r"(len));
+      asm __volatile__(".arch " SVE_ARCH "\ncntw %0" : "=r"(len));
       sprintf(patterns[pattern], "%ld-bit SP SVE", len * 32);
       coef[pattern] = len * 2;
     } else if (pattern == 5) {
       uint64_t len = 0;
-      asm __volatile__(".arch armv9-a+sve\ncntd %0" : "=r"(len));
+      asm __volatile__(".arch " SVE_ARCH "\ncntd %0" : "=r"(len));
       sprintf(patterns[pattern], "%ld-bit DP SVE", len * 64);
       coef[pattern] = len * 2;
     }

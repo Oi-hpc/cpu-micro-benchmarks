@@ -18,4 +18,13 @@
 #endif
 #endif
 
+// armv9-a assembler support landed in GCC 11 / Clang 12. Prefer the higher
+// baseline when the toolchain can assemble it, else fall back to armv8-a+sve.
+#if (defined(__clang__) && __clang_major__ >= 12) ||                               \
+    (defined(__GNUC__) && !defined(__clang__) && __GNUC__ >= 11)
+#define SVE_ARCH "armv9-a+sve"
+#else
+#define SVE_ARCH "armv8-a+sve"
+#endif
+
 #endif
