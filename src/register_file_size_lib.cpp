@@ -21,7 +21,11 @@ void register_file_size(FILE *fp) {
   int min_size = 0;
   int max_size = 800;
 #ifdef HOST_AARCH64
-  int num_patterns = 5;
+#ifdef ENABLE_SVE
+  int num_patterns = 7;
+#else
+  int num_patterns = 6;
+#endif
 #else
   int num_patterns = 8;
 #endif

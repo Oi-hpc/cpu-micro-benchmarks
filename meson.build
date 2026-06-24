@@ -30,6 +30,12 @@ else
 endif
 
 
+# Optional SVE (aarch64): emit a Z-register gadget pattern and assemble it.
+# Adds the macro to the native gadget generator and +sve to the toolchain.
+if get_option('sve')
+	cpp_args += ['-DENABLE_SVE', '-march=armv8-a+sve']
+endif
+
 message('Final CXXFLAGS:', cpp_args)
 message('Final LDFLAGS:', link_args)
 

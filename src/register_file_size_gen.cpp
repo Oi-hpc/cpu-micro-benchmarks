@@ -9,7 +9,11 @@ int main(int argc, char *argv[]) {
   int min_size = 0;
   int max_size = 800;
 #ifdef HOST_AARCH64
-  int num_patterns = 5;
+#ifdef ENABLE_SVE
+  int num_patterns = 7;
+#else
+  int num_patterns = 6;
+#endif
 #else
   int num_patterns = 8;
 #endif
@@ -135,6 +139,14 @@ int main(int argc, char *argv[]) {
         } else if (pattern == 4) {
           // 32-bit fp: s16 to s23 to avoid dependency chain
           fprintf(fp, "\tfadd s%d, s%d, s15\n", 16 + (j % 8), 16 + (j % 8));
+        } else if (pattern == 5) {
+          // 128-bit neon: v16 to v23 to avoid dependency chain
+          fprintf(fp, "\tfadd v%d.2d, v%d.2d, v15.2d\n", 16 + (j % 8),
+                  16 + (j % 8));
+        } else if (pattern == 6) {
+          // sve vector: z16 to z23 to avoid dependency chain
+          fprintf(fp, "\tfadd z%d.d, z%d.d, z15.d\n", 16 + (j % 8),
+                  16 + (j % 8));
         }
       }
 
