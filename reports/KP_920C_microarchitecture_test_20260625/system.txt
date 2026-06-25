@@ -1,0 +1,152 @@
+Thu Jun 25 15:20:30 CST 2026
+
+## uname
+Linux storage-aux 6.6.0-145.0.3.144.oe2403sp2.aarch64 #1 SMP Thu Apr 16 10:57:45 CST 2026 aarch64 aarch64 aarch64 GNU/Linux
+
+## lscpu
+Architecture:                         aarch64
+CPU op-mode(s):                       64-bit
+Byte Order:                           Little Endian
+CPU(s):                               192
+On-line CPU(s) list:                  0-191
+Vendor ID:                            HiSilicon
+Model name:                           -
+Model:                                0
+Thread(s) per core:                   2
+Core(s) per socket:                   48
+Socket(s):                            2
+Stepping:                             0x0
+Frequency boost:                      disabled
+CPU(s) scaling MHz:                   100%
+CPU max MHz:                          2200.0000
+CPU min MHz:                          1200.0000
+BogoMIPS:                             200.00
+Flags:                                fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm dit uscat ilrcpc flagm ssbs sb dcpodp sve2 sveaes svepmull svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16 dgh rng ecv
+L1d cache:                            6 MiB (96 instances)
+L1i cache:                            12 MiB (96 instances)
+L2 cache:                             96 MiB (96 instances)
+L3 cache:                             168 MiB (4 instances)
+NUMA node(s):                         4
+NUMA node0 CPU(s):                    0-47
+NUMA node1 CPU(s):                    48-95
+NUMA node2 CPU(s):                    96-143
+NUMA node3 CPU(s):                    144-191
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; CSV2, BHB
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsa:                    Not affected
+Vulnerability Tsx async abort:        Not affected
+Vulnerability Vmscape:                Not affected
+
+## meson configure builddir
+Core properties:
+  Source dir /data/nvme0/lpc/Eigen_Workspace/cpu-micro-benchmarks
+  Build dir  /data/nvme0/lpc/Eigen_Workspace/cpu-micro-benchmarks/builddir
+
+Main project options:
+  
+  Core options                   Current Value                    Possible Values                  Description                                                  
+  --------------                 -------------                    ---------------                  -----------                                                  
+  auto_features                  auto                             [enabled, disabled, auto]        Override value of all 'auto' features                        
+  backend                        ninja                            [ninja, vs, vs2010, vs2012,      Backend to use                                               
+                                                                   vs2013, vs2015, vs2017, vs2019,                                                              
+                                                                   vs2022, xcode, none]                                                                         
+  buildtype                      release                          [plain, debug, debugoptimized,   Build type to use                                            
+                                                                   release, minsize, custom]                                                                    
+  cmake_prefix_path              []                               []                               List of additional prefixes for cmake to search              
+  debug                          false                            [true, false]                    Enable debug symbols and other information                   
+  default_library                shared                           [shared, static, both]           Default library type                                         
+  force_fallback_for             []                               []                               Force fallback for those subprojects                         
+  genvslite                      vs2022                           [vs2022]                         Setup multiple buildtype-suffixed ninja-backend build        
+                                                                                                   directories, and a [builddir]_vs containing a Visual Studio  
+                                                                                                   meta-backend with multiple configurations that calls into    
+                                                                                                   them                                                         
+  install_umask                  0022                             [preserve, 0000-0777]            Default umask to apply on permissions of installed files     
+  layout                         mirror                           [mirror, flat]                   Build directory layout                                       
+  optimization                   3                                [plain, 0, g, 1, 2, 3, s]        Optimization level                                           
+  pkg_config_path                []                               []                               List of additional paths for pkg-config to search            
+  prefer_static                  false                            [true, false]                    Whether to try static linking before shared linking          
+  strip                          false                            [true, false]                    Strip targets on install                                     
+  unity                          off                              [on, off, subprojects]           Unity build                                                  
+  unity_size                     4                                >=2                              Unity block size                                             
+  vsenv                          false                            [true, false]                    Activate Visual Studio environment                           
+  warning_level                  1                                [0, 1, 2, 3, everything]         Compiler warning level to use                                
+  werror                         false                            [true, false]                    Treat warnings as errors                                     
+  wrap_mode                      default                          [default, nofallback,            Wrap mode                                                    
+                                                                   nodownload, forcefallback,                                                                   
+                                                                   nopromote]                                                                                   
+  
+  Backend options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  backend_max_links              0                                >=0                              Maximum number of linker processes to run or 0 for no limit  
+  
+  Base options                   Current Value                    Possible Values                  Description                                                  
+  --------------                 -------------                    ---------------                  -----------                                                  
+  b_asneeded                     true                             [true, false]                    Use -Wl,--as-needed when linking                             
+  b_colorout                     always                           [auto, always, never]            Use colored output                                           
+  b_coverage                     false                            [true, false]                    Enable coverage tracking.                                    
+  b_lto                          false                            [true, false]                    Use link time optimization                                   
+  b_lto_threads                  0                                                                 Use multiple threads for Link Time Optimization              
+  b_lundef                       true                             [true, false]                    Use -Wl,--no-undefined when linking                          
+  b_ndebug                       false                            [true, false, if-release]        Disable asserts                                              
+  b_pch                          true                             [true, false]                    Use precompiled headers                                      
+  b_pgo                          off                              [off, generate, use]             Use profile guided optimization                              
+  b_pie                          false                            [true, false]                    Build executables as position independent                    
+  b_sanitize                     none                             [none, address, thread,          Code sanitizer to use                                        
+                                                                   undefined, memory, leak,                                                                     
+                                                                   address,undefined]                                                                           
+  b_staticpic                    true                             [true, false]                    Build static libraries as position independent               
+  
+  Compiler options               Current Value                    Possible Values                  Description                                                  
+  ------------------             -------------                    ---------------                  -----------                                                  
+  cpp_args                       []                               []                               Extra arguments passed to the cpp compiler                   
+  cpp_debugstl                   false                            [true, false]                    STL debug mode                                               
+  cpp_eh                         default                          [none, default, a, s, sc]        C++ exception handling type.                                 
+  cpp_link_args                  []                               []                               Extra arguments passed to the cpp linker                     
+  cpp_rtti                       true                             [true, false]                    Enable RTTI                                                  
+  cpp_std                        c++11                            [none, c++98, c++03, c++11,      C++ language standard to use                                 
+                                                                   c++14, c++17, c++1z, c++2a,                                                                  
+                                                                   c++20, c++23, gnu++98, gnu++03,                                                              
+                                                                   gnu++11, gnu++14, gnu++17,                                                                   
+                                                                   gnu++1z, gnu++2a, gnu++20,                                                                   
+                                                                   gnu++23]                                                                                     
+  
+  Directories                    Current Value                    Possible Values                  Description                                                  
+  -------------                  -------------                    ---------------                  -----------                                                  
+  bindir                         bin                                                               Executable directory                                         
+  datadir                        share                                                             Data file directory                                          
+  includedir                     include                                                           Header file directory                                        
+  infodir                        share/info                                                        Info page directory                                          
+  libdir                         lib64                                                             Library directory                                            
+  libexecdir                     libexec                                                           Library executable directory                                 
+  licensedir                                                                                       Licenses directory                                           
+  localedir                      share/locale                                                      Locale data directory                                        
+  localstatedir                  /var/local                                                        Localstate data directory                                    
+  mandir                         share/man                                                         Manual page directory                                        
+  prefix                         /usr/local                                                        Installation prefix                                          
+  sbindir                        sbin                                                              System executable directory                                  
+  sharedstatedir                 /var/local/lib                                                    Architecture-independent data directory                      
+  sysconfdir                     etc                                                               Sysconf data directory                                       
+  
+  Testing options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  errorlogs                      true                             [true, false]                    Whether to print the logs from failing tests                 
+  stdsplit                       true                             [true, false]                    Split stdout and stderr in test logs                         
+  
+  Project options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  android                        false                            [true, false]                    android                                                      
+  gem5                           false                            [true, false]                    gem5                                                         
+  ios                            false                            [true, false]                    ios                                                          
+  linux-cross                    none                             [none, aarch64]                  linux-cross                                                  
+  sve                            true                             [true, false]                    sve                                                          
